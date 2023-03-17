@@ -939,16 +939,15 @@ $( document ).ready(function() {
 		})
 
 		var banderaimgilustra = 1
-		var dir = "img/ilustracciones/";
+		var dir = "https://api.github.com/repos/fhorazombie/Vicman/contents/img/ilustracciones";
 		var fileextension = ".jpg";
 		var imagenes = []
 		$.ajax({
 		    url: dir,
 		    success: function (data) {
-		        $(data).find("a:contains(" + fileextension + ")").each(function () {
-		            var filename = this.href.replace("vicman.mx", "").replace("http://", "");
-		            imagenes.push(filename);
-		        });
+				data.forEach(element => {
+					imagenes.push(element.name);
+				});
 		    }
 		});
 
