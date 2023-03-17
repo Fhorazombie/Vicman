@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link href="https://fonts.googleapis.com/css?family=Sigmar+One" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Covered+By+Your+Grace" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Passion+One|Sigmar+One" rel="stylesheet">
+	<title>Vicman</title>
+	<meta id ="viewport" name="viewport" content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script language="JavaScript" type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+	<meta property="og:title" content="Vicman | Contacto" />
+	<meta property="og:type" content="website" /> 
+  	<meta property="og:url" content="http://vicman.mx/contacto" /> 
+  	<meta property="og:image" content="http://vicman.mx/img/open_imag.png" />
+  	<meta property="og:description" content="Victor Palacios (Vicman) me dedico a la animación, ilustración y caricatura, trabajo como consultor independiente para algunos estudios de animación y post producción, así como desarrollado proyectos independientes en diversas disciplinas como animación, video mapping, diseño de interactivos e ilustración, además soy autor de libros infantiles." />
+  	<link rel="icon" href="img/icono_vicman.ico" sizes="64x64">
+  	<script src='https://www.google.com/recaptcha/api.js'></script>
+</head>
+<body style="overflow: initial;">
+<div id="logo" style="margin-top: 90px; height: auto;">
+	<h1 style="height: auto;">Vicman</h1>
+	<h2 style="height: auto;">Animador y monero</h2>
+</div>
+	<div id="cont_contacto" class="contenidos">
+		<h1>¡Mandame un mensaje!</h1>
+		<form>
+			<label class="nombre">Nombre</label>
+			<input class="nombre" id="nombre" type="text" name="nombre" autocomplete="name">
+			<br>
+			<br>
+			<label class="correo" >Correo</label>
+			<input class="correo" id="correo" type="email" name="correo" autocomplete="email">
+			<br>
+			<br>
+			<label class="telefono" >Teléfono</label>
+			<input class="telefono" id="telefono" type="number" name="telefono" autocomplete="tel">
+			<br>
+			<br>
+			<br>
+			<label class="mensaje">Mensaje</label>
+			<br>
+			<br>
+			<textarea class="mensaje" id="mensaje" name="mensaje"> </textarea>
+			<br>
+			<br>
+			<div class="g-recaptcha" data-sitekey="6LeryBMUAAAAAF1iY8lt7PxQ3lLcXLVYylYhTVky"></div>
+			<br>
+			<input id="enviar" type="button" name="enviar" value="Enviar">
+		</form>
+	</div>
+	<div id="loading">
+		<h1>Por favor espera.....</h1>
+		<img src="img/home.gif">
+	</div>
+	<div id="redes" style="bottom: initial; height: 90px; width: 90px;">
+		<a href="index.html"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i></a>
+	</div>
+	<script type="text/javascript">
+		$("#enviar").click(function(){
+
+			var nombre = $("#nombre").val();
+			var email = $("#email").val();
+			var telefono = $("#telefono").val();
+			var mensaje = $("#mensaje").val();
+
+			if(nombre==''||email==''||mensaje=='')
+			{
+			alert("Por favor llena todos los campos");
+			}
+
+			$("#cont_contacto").css("display","none")
+			$("#loading").css("display","block")
+			$("#loading").css("opacity","1")
+			$.ajax({
+				type: "POST",
+				url: "cont/send.php",
+				data: $('form').serialize(),
+				cache: false,
+				success: function(result){
+
+					$("#loading").css("opacity","0")
+					$("#loading").css("display","none")
+					$("#cont_contacto").css("display","block")
+					console.log(result);
+					switch (result) {
+
+						case "<p style='color:#f00 '>*Por favor dale click al captcha</p>":
+						if ($("#cont_contacto p").length) {
+							$("#cont_contacto p").remove();
+						}
+						$("#correo").removeAttr( 'style' )
+						$("#cont_contacto").css("top","5%")
+						$(".g-recaptcha div").css({"border":"1px solid #f00", "box-shadow" : "0px 0px 9px 4px #f00"})
+						$("#cont_contacto").prepend(result)
+						break
+
+						case "<p style='color:#f00 '>*Tu email es incorrecto, por favor ingresa un mail verdadero</p>":
+						if ($("#cont_contacto p").length) {
+							$("#cont_contacto p").remove();
+						}
+						$(".g-recaptcha div").removeAttr( 'style' )
+						grecaptcha.reset()
+						$("#cont_contacto").css("top","5%")
+						$("#correo").css({"border":"1px solid #f00", "box-shadow" : "0px 0px 9px 4px #f00"})
+						$("#cont_contacto").prepend(result)
+						break
+
+						case "<h2>Corre por tu vida! Bueno no, solo espera un poco puede que esta seccion siga en mantenimiento manda un correo a lalechugaencalzones@gmail.com</h2>":
+						$("#cont_contacto").empty()
+						$("#cont_contacto").append(result)
+						break
+
+						case "Tu email fue enviado exitosamente!!!":
+						$("#cont_contacto").empty()
+						$("#cont_contacto").append("<h2>"+result+"</h2>")
+						break
+
+						case "Uuuuups algo salio mal, pueden intentarlo de nuevo en un momento!!!!":
+						$("#cont_contacto").empty()
+						$("#cont_contacto").append("<h2>"+result+"</h2>")
+						break
+
+						default:
+						$("#cont_contacto").empty()
+						$("#cont_contacto").append("<h2>"+result+"</h2>")
+						break
+
+					}
+
+				}
+				,error: function(result) {
+					console.log(result);
+					$("#cont_contacto").empty()
+					$("#cont_contacto").append(result)
+		        }
+			})
+		})
+	</script>
+</body>
+</html>

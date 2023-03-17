@@ -1,0 +1,474 @@
+@import url("font-awesome.min.css");
+
+html, body{
+	margin: 0px;
+	padding: 0px;
+	width: 100%;
+	max-width: 100%;
+	height: 100%;
+	max-height: 100%;
+	font-family:  sans-serif;
+}
+
+body{
+    overflow: hidden;
+}
+
+h1 {
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-family: 'Sigmar One', cursive;
+    text-transform: uppercase;
+    font-size: 3em;
+    display: inline-block;
+    height: 70%;
+        line-height: 100%;
+        vertical-align: middle;
+}
+
+h2{
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-family: 'Covered By Your Grace', cursive;
+    text-transform: uppercase;
+    font-size: 3em;
+    display: inline-block;
+    margin-left: 2%;
+    height: 70%;
+        line-height: 100%;
+        vertical-align: middle;
+}
+
+h3{
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-family: 'Passion One', cursive;
+    text-transform: uppercase;
+    font-size: 33px;
+    display: table-cell;
+    vertical-align: middle;
+    transition: all 0.5s ease;
+}
+
+h4 {
+	font-family: 'Passion One', cursive;
+    -webkit-margin-before: 0px;
+    -webkit-margin-after: 0px;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    margin: auto;
+    position: relative;
+    width: 80%;
+    margin-top: 2%;
+	font-size: 25px;
+    font-weight: lighter;
+}
+
+iframe{
+	width: 80%;
+	height: 64vh;
+	position: relative;
+    margin: auto;
+    display: block;
+}
+
+#wrapper {
+    padding: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: #fff;
+    width: 98%;
+    height: 96%;
+}
+
+#wrapper2 {
+    padding: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    background-color: #fff;
+    width: 98%;
+    height: 96%;
+}
+
+div#logo {
+    height: 11%;
+    text-align: center;
+}
+
+#casa {
+	width: 100%;
+	height: 89%;
+}
+
+#wrapper2 #casa {
+	position: relative;
+}
+
+#Menu {
+    width: 100%;
+    height: 12%;
+    background-color: #fff;
+    display: block;
+}
+
+.botones {
+	width: 20%;
+	float: left;
+	height: 100%;
+    text-align: center;
+    display: table;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+#boton_1:hover,#boton_1:active, #boton_1::selection {
+    background-color: #e78a8a;
+    color: #fff;
+    text-shadow: 0px 0px 4px #000;
+}
+
+#boton_2:hover,#boton_2:active, #boton_2::selection {
+    background-color: #e9c891;
+    color: #fff;
+    text-shadow: 0px 0px 4px #000;
+}
+
+#boton_3:hover,#boton_3:active, #boton_3::selection {
+    background-color: #8de885;
+    color: #fff;
+    text-shadow: 0px 0px 4px #000;
+}
+
+#boton_4:hover,#boton_4:active, #boton_4::selection {
+    background-color: #87bdda;
+    color: #fff;
+    text-shadow: 0px 0px 4px #000;
+}
+
+#boton_5:hover,#boton_5:active, #boton_5::selection {
+    background-color: #6e71db;
+    color: #fff;
+    text-shadow: 0px 0px 4px #000;
+}
+
+
+.categoria {
+	width: 20%;
+	height: 88%;
+	float: left;
+	opacity: 1;
+	transition: opacity 0.2s linear;
+    background-repeat: no-repeat;
+    background-size: 100% 91%;
+}
+
+#seccion_1 {
+    
+    background-image: url(../img/home.jpg);
+}
+#seccion_2 {
+   	
+   	background-image: url(../img/pintamonos.jpg);
+
+}
+#seccion_3 {
+    
+    background-image: url(../img/animador.jpg);
+}
+#seccion_4 {
+    
+    background-image: url(../img/proyectos.jpg);
+}
+#seccion_5 {
+    
+    background-image: url(../img/contacto.jpg);
+}
+
+.ventanas {
+    display: none;
+    width: 73%;
+    height: 75%;
+    opacity: 0;
+    transition: opacity 3s linear;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: absolute;
+    right: 1%;
+    z-index: 15;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,595959+100&0+0,1+100 */
+    background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgb(165, 165, 165) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgb(165, 165, 165) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgb(165, 165, 165) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a5a5a5',GradientType=0 ); /* IE6-9 */
+
+}
+
+#Lechuga {
+    position: absolute;
+    width: 35%;
+    height: 70%;
+    /* background-color: #fff; */
+    background-image: url(../img/home.gif);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: auto 100%;
+    text-align: center;
+    left: -1%;
+    bottom: 1%;
+    margin-left: 0%;
+        z-index: 5;
+}
+
+
+div#ilustraciones {
+    width: 100%;
+    height: 64vh;
+}
+
+div#ilustraciones {
+    width: 100%;
+    height: 64vh;
+    overflow: hidden;
+}
+
+.ilustraccion {
+    width: 70%;
+    position: relative;
+    height: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: #fff;
+}
+
+.ilustraccion img {
+    height: 70%;
+    max-width: 100%;
+    padding: 2%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: none;
+    transition: all 0.5s ease;
+}
+
+img#imagen_1 {
+	display: block;
+}
+
+.flechas {
+    position: absolute;
+    bottom: 0;
+    width: 20%;
+    height: 15%;
+    display: table;
+    vertical-align: middle;
+    font-size: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+div#flecha_der {
+    right: 0;
+}
+
+div#flecha_der_proyect {
+    right: 0;
+}
+div#flecha_izq_proyect:active ,div#flecha_der_proyect:active {
+    color: #8cc0dc;
+}
+
+#contenido_proyect{
+    display: none;
+}
+
+#contenido_proyect #ilustraciones, #contenido_proyect iframe{
+    display: none;
+}
+
+#contenido_proyect #ilustraciones img{
+    display: none;
+}
+
+#imagen_1p{
+    display: block;
+}
+
+.proyec_img {
+    width: 22%;
+    display: inline-block !important;
+    margin: 1% 2%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    opacity: 1;
+    text-align: center;
+}
+
+.proyec_img img {
+    padding: 2%;
+    max-width: 87%;
+}
+
+.proyec_img:hover {
+    opacity: 0.7;
+}
+
+div#boton_cerrar_proyect {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 40px;
+    width: 45px;
+    height: 45px;
+    background-color: #e01515;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+div#redes {
+    width: 300px;
+    height: 90px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+    color: #1476da;
+    font-size: 80px;
+}
+
+#cont_contacto h1 {
+    text-align: center;
+    width: 100%;
+    margin: 2% 0px;
+}
+
+form {
+    width: 80%;
+    position: relative;
+    margin: 2% auto;
+}
+
+#cont_contacto input {
+    width: 100%;
+    height: 30px;
+}
+
+#cont_contacto #mensaje{
+    width: 100%;
+    height: 60px;
+}
+
+input#enviar {
+    color: #fff;
+    background-color: #dc1f1f;
+    width: 60%;
+    height: 42px;
+    position: relative;
+    font-size: 20px;
+    margin: auto;
+    display: block;
+    transition: all 0.5s ease;
+}
+
+input#enviar:hover {
+    background-color: #d412b3;
+}
+
+input#enviar:active {
+    background-color: #12d469;
+}
+
+.g-recaptcha iframe {
+    height: auto;
+    width: 100%;
+}
+
+div#loading {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    display: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+#loading h1 {
+    margin: 0px;
+    font-size: 30px;
+    height: auto;
+    display: block;
+}
+
+#loading img {
+    height: 100%;
+}
+
+    @media (max-width: 1000px) {
+        h3{
+            font-size: 1.5em;
+        }
+
+        h4 {
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 700px) {
+        h1{
+            font-size: 1.6em;
+        }
+
+        h2{
+            font-size: 1.3em;
+        }
+
+        h3{
+            font-size: 1em;
+        }
+
+        h4 {
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        h1{
+            font-size: 1em;
+        }
+
+        h2{
+            font-size: 1em;
+        }
+
+        h3{
+            font-size: 0.7em;
+        }
+
+        h4 {
+            font-size: 13px;
+        }
+    }
